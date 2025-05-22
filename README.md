@@ -102,15 +102,13 @@ A continuación, se describe cómo deben verse los mensajes al ser exportados:
 
 | Criterio                                                                                                                               | Puntos |
 |----------------------------------------------------------------------------------------------------------------------------------------|--------|
-| Se aplica correctamente el formato para los tres tipos                                                                                 | 30     |
+| Se aplica correctamente el formato para los tres tipos, usando una opción en el **main** y aplicando el patrón de diseño adecuado      | 30     |
 | La implementación del formateo está correctamente estructurada, separa responsabilidades y permite componer estilos de manera flexible | 20     |
 | La solución es fácilmente extensible y evita lógica rígida                                                                             | 15     |
 | El archivo HTML se genera correctamente y contiene el contenido esperado para todos los mensajes                                       | 10     |
 | El diagrama de clases es claro y coherente con el diseño                                                                               | 10     |
 | Estructura del código, limpieza y buenas prácticas                                                                                     | 5      |
 | **Total**                                                                                                                              | **90** |
-
-Una nota 4,0 se obtiene con al menos 54 puntos.
 
 ## 🛠️ Cómo ejecutar el proyecto localmente con Maven
 
