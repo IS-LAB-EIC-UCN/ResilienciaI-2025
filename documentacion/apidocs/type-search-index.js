@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"cl.ucn.modelo","l":"Formateador"},{"p":"cl.ucn.interfaz","l":"Main"},{"p":"cl.ucn.modelo","l":"Mensaje"},{"p":"cl.ucn.servicio","l":"ServicioDAO"}];updateSearchResults();
