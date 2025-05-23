@@ -1,7 +1,6 @@
 package cl.ucn.interfaz;
 
-import cl.ucn.modelo.Formateador;
-import cl.ucn.modelo.Mensaje;
+import cl.ucn.modelo.*;
 import cl.ucn.servicio.ServicioDAO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -37,7 +36,6 @@ public class Main {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("mensajes");
         EntityManager em = emf.createEntityManager();
         ServicioDAO servicioDAO = new ServicioDAO(em);
-        Formateador formateador = new Formateador();
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -97,7 +95,21 @@ public class Main {
                     if (resultado.isEmpty()) {
                         System.out.println("No se encontró ningún mensaje con ese ID.");
                     } else {
-                        formateador.aplicarItalicaYGuardar(resultado.get(0));
+
+                        Mensaje mensaje = resultado.get(0);
+                        if (mensaje.getTipo().equals("rojo")){
+                            IFormateador formateador = new FormateadorH1(new FormateadorNegrita(mensaje));
+                            formateador.aplicarFormato(mensaje);
+                            formateador.guardar();
+                        } else if (mensaje.getTipo().equals("amarillo")) {
+                            IFormateador formateador = new FormateadorNegrita(new FormateadorSubrayado(mensaje));
+                            formateador.aplicarFormato(mensaje);
+                            formateador.guardar();
+                        } else if (mensaje.getTipo().equals("verde")) {
+                            IFormateador formateador = new FormateadorItalico((mensaje));
+                            formateador.aplicarFormato(mensaje);
+                            formateador.guardar();
+                        }
                     }
                 }
                 case 5 -> {
